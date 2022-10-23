@@ -16,6 +16,7 @@ import br.com.rick.Exceptions.ExceptionResponse;
 @RestController
 public class CustomizedResponseEntityExceptionHandle extends ResponseEntityExceptionHandler {
 
+	
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ExceptionResponse> handleAllExceptions(Exception ex, WebRequest request){
 		ExceptionResponse exceptionResponse = new ExceptionResponse(
