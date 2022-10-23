@@ -1,4 +1,4 @@
-package br.com.rick;
+package br.com.rick.controllers;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.rick.Exceptions.UnsuportedMathOperationException;
+import br.com.rick.math.Operacoes;
+import br.com.rick.validation.Validation;
 
 @RestController
 public class MathController {

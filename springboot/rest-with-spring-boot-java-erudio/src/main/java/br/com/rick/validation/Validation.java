@@ -1,4 +1,4 @@
-package br.com.rick;
+package br.com.rick.validation;
 
 public class Validation {	
 	

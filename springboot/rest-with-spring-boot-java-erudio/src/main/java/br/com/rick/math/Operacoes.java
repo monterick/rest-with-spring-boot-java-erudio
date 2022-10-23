@@ -1,4 +1,4 @@
-package br.com.rick;
+package br.com.rick.math;
 
 
 
