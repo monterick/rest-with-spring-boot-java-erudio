@@ -3,7 +3,8 @@ package br.com.rick.controllers;
 
 
 
-import javax.websocket.server.PathParam;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -25,11 +26,18 @@ public class PersonController {
 	private PersonServices service;
 	//PersonServices personServices = new PersonServices();
 	@RequestMapping(
-			value = "/{id}", 
 			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public Person findById(@PathVariable(value = "id") String id) throws Exception {
-		return service.findById(id);
+	public List<Person> findAll() {
+		return service.findAll();
 	}
+	
+	@RequestMapping(
+            value = "/{id}", 
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Person findById(@PathVariable(value = "id") String id) throws Exception {
+        return service.findById(id);
+    }
 	
 }

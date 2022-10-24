@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Person implements Serializable{
 
@@ -46,6 +47,23 @@ public class Person implements Serializable{
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, firstName, gender, id, lastName);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		return Objects.equals(address, other.address) && Objects.equals(firstName, other.firstName)
+				&& Objects.equals(gender, other.gender) && id == other.id && Objects.equals(lastName, other.lastName);
+	}
+	
 	
 	
 	
