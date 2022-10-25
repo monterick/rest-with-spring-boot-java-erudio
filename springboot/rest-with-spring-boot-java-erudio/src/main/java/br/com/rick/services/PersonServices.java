@@ -20,8 +20,10 @@ public class PersonServices {
 
 	private final AtomicLong counter = new AtomicLong();
     private Logger logger = Logger.getLogger(PersonServices.class.getName());
+
     
-    public List<Person> findAll() {        
+    public List<Person> findAll() {
+        logger.info("finding All persons!");
         List<Person> persons = new ArrayList<>();
         for(int i = 0;i< 8;i++) {
             Person person = mockPerson(i);
@@ -30,6 +32,21 @@ public class PersonServices {
         return persons ;
     }
     
+    
+    public Person create(Person person) {
+        logger.info("Create a new Person");
+        return person;
+    }
+    
+    public Person update(Person person) {
+        logger.info("Create a new Person");
+        return person;
+    }
+    
+    public void delete(String id) {
+        logger.info("Deleting a person");
+    }
+   
    
 
     public Person findById(String id) {
